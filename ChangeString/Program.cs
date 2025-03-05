@@ -14,8 +14,13 @@ namespace ChangeString
             //ask user fot input(Character)
             Console.Write("Insert Character: ");
             char Cha = Console.ReadKey().KeyChar;
+            Console.WriteLine(); //stops new string being right after input char
 
-            s2 = s.Replace('i', 'I');
+            string s2 = s.Replace(Cha, 'x'); 
+
+
+            Console.WriteLine($"New string = {s2}");
+
 
             
         }
