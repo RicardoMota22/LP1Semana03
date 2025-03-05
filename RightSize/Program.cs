@@ -9,17 +9,16 @@ namespace RightSize
 
             foreach(string s in args)
             {
-                if (s.Length > 3)
-                {
-                    Console.WriteLine(s);
-                    
-                }
                 if (s.Length >= 8)
                 {
                     Console.WriteLine("[EARLY STOP]");
                     return;
                 }
-
+                if (s.Length > 3)
+                {
+                    Console.WriteLine(s);
+                    
+                }
             }
 
             
