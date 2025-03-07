@@ -45,9 +45,13 @@ namespace WeaponSelector
         /// <returns>The weapons.</returns>
         private static Weapons ParseWeapons(string[] args)
         {
-            // ////////// //
-            // CHANGE ME! //
-            // ////////// //
+            Weapons weapon = Enum.Parse<Weapons>(args[1]);
+            if (weapon == 0)
+                return Weapons.None;
+            else 
+                return weapon;
+
+
         }
 
         /// <summary>
@@ -61,7 +65,8 @@ namespace WeaponSelector
             // ////////// //
             // CHANGE ME! //
             // ////////// //
-        }
+            
+            if (EnemyType.Zombie, Weapons.SilverBullet == true)
 
         /// <summary>
         /// Display information on wether the enemy was killed or not.
@@ -72,6 +77,18 @@ namespace WeaponSelector
             // ////////// //
             // CHANGE ME! //
             // ////////// //
+            if (survives == false)
+                Console.WriteLine($"{enemy} dies");
+                
+            else        
+            Console.WriteLine($"{enemy} survives");
+            return;
+                    
+
+                }
+            }
+
+            
         }
     }
 }
