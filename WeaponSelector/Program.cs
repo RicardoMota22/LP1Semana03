@@ -66,14 +66,17 @@ namespace WeaponSelector
             // CHANGE ME! //
             // ////////// //
             
-            if (EnemyType.Zombie, Weapons.SilverBullet == true)
+            if (EnemyType.Zombie, Weapons.None == true)
+            if (EnemyType.Vampire, Weapons.Garlic == true)
+            if (EnemyType.Werewolf, Weapons.SilverBullet == true)
+            if (EnemyType.Ghost, Weapons.HolyWater == true)
 
         /// <summary>
         /// Display information on wether the enemy was killed or not.
         /// </summary>
         /// <param name="enemy">The enemy we're trying to kill.</param>
         private static void DisplayResult(EnemyType enemy, bool survives)
-        {
+            {
             // ////////// //
             // CHANGE ME! //
             // ////////// //
@@ -85,8 +88,8 @@ namespace WeaponSelector
             return;
                     
 
-                }
             }
+            
 
             
         }
