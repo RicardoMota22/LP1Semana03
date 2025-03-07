@@ -8,7 +8,7 @@ namespace HeroPerk
     [Flags]
     enum Perks
     {
-        None = 0,
+    
         WarpShift = 1,
         Stealth = 2,
         AutoHeal = 4,
@@ -22,37 +22,30 @@ namespace HeroPerk
             
         //Specific letters count
         string input = args[0];
-        char[] letterToCount = { 'w', 'a', 's', 'd' };
-        Perks p_Perks = Perks.None;
+        Perks p_Perks = 0;
 
-
-        if (letterToCount.Equals('w')== true)
-        {
-            p_Perks ^= Perks.WarpShift;
-        }
-        if (letterToCount.Equals('a')== true)
-        {
-            p_Perks ^= Perks.Stealth;
-        }
-        if (letterToCount.Equals('s')== true)
-        {
-            p_Perks ^= Perks.AutoHeal;
-        }
-        if (letterToCount.Equals("d")== true)
-        {
-            p_Perks ^= Perks.DoubleJump;
-        }
-        else      //if it includes another letter
-        {
-            Console.WriteLine("!Unknown perk!");
-        }
+        //switches roles if they are on or off
+        foreach (char c in input)
+            {
+                switch (c)
+                {
+                    case 'w': p_Perks ^= Perks.WarpShift; break;
+                    case 'a': p_Perks ^= Perks.Stealth; break;
+                    case 's': p_Perks ^= Perks.AutoHeal; break;
+                    case 'd': p_Perks ^= Perks.DoubleJump; break;
+                    default:
+                        Console.WriteLine("!Unknown perk!");
+                        return;
+                }
+            }
        
 
         
             
-        if (p_Perks == Perks.None)
+        if (p_Perks == 0)
             {
                 Console.WriteLine("!No perks at all!");
+                return;
             }
             else
             {
